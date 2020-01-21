@@ -19,7 +19,7 @@ import java.io.IOException;
 
 @Service
 public class CreateNamespace {
-    public void createnamespace(String id) throws IOException, ApiException {
+    public String createnamespace(String id) throws IOException, ApiException {
 
         String kubeConfigPath = "/Users/kumshant0/.kube/config";
 
@@ -39,10 +39,10 @@ public class CreateNamespace {
             meta.setName(id);
             ns.setMetadata(meta);
             api.createNamespace(ns, null, null, null);
-            System.out.println("Namespace" + id + "Created");
+            return ("Namespace" + id + "Created");
         }
         catch (Exception e){
-            System.out.println("Couldn't create namespace ");
+            return  ("Couldn't create namespace ");
         }
 
 
