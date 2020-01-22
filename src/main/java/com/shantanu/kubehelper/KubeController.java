@@ -1,10 +1,8 @@
 package com.shantanu.kubehelper;
 
 
-// import org.springframework.stereotype.Controller;
-//import io.kubernetes.client.models.V1Pod;
-import io.kubernetes.client.models.V1NamespaceList;
 import org.springframework.stereotype.Controller;
+import io.kubernetes.client.models.V1NamespaceList;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

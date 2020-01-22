@@ -6,12 +6,8 @@ import io.kubernetes.client.Configuration;
 import io.kubernetes.client.apis.CoreV1Api;
 import io.kubernetes.client.models.V1Namespace;
 import io.kubernetes.client.models.V1ObjectMeta;
-//import io.kubernetes.client.util.ClientBuilder;
 import io.kubernetes.client.util.Config;
-//import io.kubernetes.client.util.KubeConfig;
 import org.springframework.stereotype.Service;
-
-import java.io.FileReader;
 import java.io.IOException;
 
 
