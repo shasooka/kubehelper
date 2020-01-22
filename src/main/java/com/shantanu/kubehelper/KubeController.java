@@ -1,6 +1,7 @@
 package com.shantanu.kubehelper;
 
 
+import io.kubernetes.client.ApiClient;
 import org.springframework.stereotype.Controller;
 import io.kubernetes.client.models.V1NamespaceList;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,8 @@ import java.util.List;
 @Controller
 public class KubeController {
 
+    public static ApiClient client = Client.getInstance();
+
 	private final ListPods listpods;
     private final ListNamespaces listNamespaces;
 
@@ -20,14 +23,6 @@ public class KubeController {
 		this.listpods = listpods;
         this.listNamespaces = listNamespaces;
 	}
-
-
-
-
-//    private final ListNamespaces listnamespaces;
-//    public KubeController(ListNamespaces listnamespaces){
-//        this.listnamespaces = listnamespaces;
-//    }
 
     @RequestMapping("/")
     public @ResponseBody
