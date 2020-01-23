@@ -16,13 +16,13 @@ public class KubeController {
 
     public static ApiClient client = Client.getInstance();
 
-	private final ListPods listpods;
+    private final ListPods listpods;
     private final ListNamespaces listNamespaces;
 
-	public KubeController(ListPods listpods, ListNamespaces listNamespaces){
-		this.listpods = listpods;
+    public KubeController(ListPods listpods, ListNamespaces listNamespaces) {
+        this.listpods = listpods;
         this.listNamespaces = listNamespaces;
-	}
+    }
 
     @RequestMapping("/")
     public @ResponseBody
@@ -30,18 +30,16 @@ public class KubeController {
         return "Kube Helper Home";
     }
 
-	@RequestMapping("/listpods")
-	public @ResponseBody
-	List<String> greeting() throws Exception
-	{
-		return listpods.getpods();
-	}
+    @RequestMapping("/listpods")
+    public @ResponseBody
+    List<String> greeting() throws Exception {
+        return listpods.getpods();
+    }
 
 
     @RequestMapping("/listnamespaces")
     public @ResponseBody
-    V1NamespaceList listnamespaces() throws Exception
-    {
+    V1NamespaceList listnamespaces() throws Exception {
         return listNamespaces.getservices();
     }
 
@@ -51,6 +49,6 @@ public class KubeController {
     public String createNameSpace(@RequestParam(required = false) String id) throws Exception {
         CreateNamespace createNamespace = new CreateNamespace();
         createNamespace.createnamespace(id);
-	    return "ID: " + id;
+        return "ID: " + id;
     }
 }

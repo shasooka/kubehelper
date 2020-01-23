@@ -8,6 +8,7 @@ import io.kubernetes.client.models.V1Namespace;
 import io.kubernetes.client.models.V1ObjectMeta;
 import io.kubernetes.client.util.Config;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 
 
@@ -28,9 +29,8 @@ public class CreateNamespace {
             ns.setMetadata(meta);
             api.createNamespace(ns, null, null, null);
             return ("Namespace" + id + "Created");
-        }
-        catch (Exception e){
-            return  ("Couldn't create namespace ");
+        } catch (Exception e) {
+            return ("Couldn't create namespace ");
         }
 
 

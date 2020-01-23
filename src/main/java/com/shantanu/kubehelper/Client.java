@@ -11,18 +11,18 @@ import java.io.IOException;
 @Component
 public class Client {
 
-   private static ApiClient client = null;
+    private static ApiClient client = null;
 
-   public static ApiClient getInstance()  {
-       try {
-           if (client == null) {
-               client = Config.defaultClient();
-               Configuration.setDefaultApiClient(client);
-           }
-       } catch (IOException e) {
-           e.printStackTrace();
-           client = null;
-       }
-       return client;
-   }
+    public static ApiClient getInstance() {
+        try {
+            if (client == null) {
+                client = Config.defaultClient();
+                Configuration.setDefaultApiClient(client);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            client = null;
+        }
+        return client;
+    }
 }
